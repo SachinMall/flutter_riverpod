@@ -26,17 +26,17 @@ class WeatherModel {
     WeatherModel({
         required this.coord,
         required this.weather,
-        required this.base,
+         this.base = "",
         required this.main,
-        required this.visibility,
+         this.visibility = 0,
         required this.wind,
         required this.clouds,
-        required this.dt,
+         this.dt = 0,
         required this.sys,
-        required this.timezone,
-        required this.id,
-        required this.name,
-        required this.cod,
+         this.timezone = 0,
+         this.id = 0,
+         this.name = "",
+         this.cod = 0,
     });
 
     factory WeatherModel.fromJson(Map<String, dynamic> json) => WeatherModel(
@@ -76,7 +76,7 @@ class Clouds {
     int all;
 
     Clouds({
-        required this.all,
+         this.all = 0,
     });
 
     factory Clouds.fromJson(Map<String, dynamic> json) => Clouds(
@@ -93,8 +93,8 @@ class Coord {
     double lat;
 
     Coord({
-        required this.lon,
-        required this.lat,
+         this.lon = 0.0,
+         this.lat= 0.0,
     });
 
     factory Coord.fromJson(Map<String, dynamic> json) => Coord(
@@ -119,14 +119,14 @@ class Main {
     int grndLevel;
 
     Main({
-        required this.temp,
-        required this.feelsLike,
-        required this.tempMin,
-        required this.tempMax,
-        required this.pressure,
-        required this.humidity,
-        required this.seaLevel,
-        required this.grndLevel,
+         this.temp = 0.0,
+         this.feelsLike = 0.0,
+         this.tempMin = 0.0,
+         this.tempMax = 0.0,
+         this.pressure = 0,
+         this.humidity = 0,
+         this.seaLevel = 0,
+         this.grndLevel = 0,
     });
 
     factory Main.fromJson(Map<String, dynamic> json) => Main(
@@ -160,11 +160,11 @@ class Sys {
     int sunset;
 
     Sys({
-        required this.type,
-        required this.id,
-        required this.country,
-        required this.sunrise,
-        required this.sunset,
+         this.type = 0,
+         this.id = 0,
+         this.country = "",
+         this.sunrise = 0,
+         this.sunset = 0,
     });
 
     factory Sys.fromJson(Map<String, dynamic> json) => Sys(
@@ -191,10 +191,10 @@ class Weather {
     String icon;
 
     Weather({
-        required this.id,
-        required this.main,
-        required this.description,
-        required this.icon,
+         this.id = 0,
+         this.main = "",
+         this.description = "",
+         this.icon = "",
     });
 
     factory Weather.fromJson(Map<String, dynamic> json) => Weather(
@@ -217,8 +217,8 @@ class Wind {
     int deg;
 
     Wind({
-        required this.speed,
-        required this.deg,
+         this.speed = 0.0,
+         this.deg = 0,
     });
 
     factory Wind.fromJson(Map<String, dynamic> json) => Wind(

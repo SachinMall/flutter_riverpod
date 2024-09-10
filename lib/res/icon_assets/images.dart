@@ -1,5 +1,5 @@
 
-import 'package:flutter_riverpod/res/icon_assets/base.dart';
+import 'package:flutter_riverpod_weather_app/res/icon_assets/base.dart';
 
 class IconsAssets {
   static const _base = BasePaths.baseImagePath;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/res/app_colors.dart';
-import 'package:flutter_riverpod/res/icon_assets/images.dart';
+import 'package:flutter_riverpod_weather_app/res/app_colors.dart';
+import 'package:flutter_riverpod_weather_app/res/icon_assets/images.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
