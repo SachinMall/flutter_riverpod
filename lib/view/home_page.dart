@@ -60,7 +60,10 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const Gap(15),
                 // SvgPicture.asset(IconsAssets.rainyCloudIcon),
-                Image.asset(IconsAssets.homeCloudIcon,fit: BoxFit.contain,),
+                Image.asset(
+                  IconsAssets.homeCloudIcon,
+                  fit: BoxFit.contain,
+                ),
                 const Gap(15),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -102,47 +105,52 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const Gap(20),
                     Container(
-                        width: screenWidth,
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: AppColors.containerColor.withOpacity(0.5),
-                        ),
-                        child:  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Today',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  'Mar, 9',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _buildHourlyForecast('15.00', '29°C', Icons.wb_sunny),
-                _buildHourlyForecast('16.00', '26°C', Icons.wb_cloudy),
-                _buildHourlyForecast('17.00', '24°C', Icons.cloud, isSelected: true),
-                _buildHourlyForecast('18.00', '23°C', Icons.nights_stay),
-              ],
-            ),
-                    ],
-                  ),),
+                      width: screenWidth,
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: AppColors.containerColor.withOpacity(0.5),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Today',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                'Mar, 9',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              _buildHourlyForecast(
+                                  '15.00', '29°C', Icons.wb_sunny),
+                              _buildHourlyForecast(
+                                  '16.00', '26°C', Icons.wb_cloudy),
+                              _buildHourlyForecast('17.00', '24°C', Icons.cloud,
+                                  isSelected: true),
+                              _buildHourlyForecast(
+                                  '18.00', '23°C', Icons.nights_stay),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -153,8 +161,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-    String formattedDate = DateFormat('MMM d').format(DateTime.now()); 
-
+  String formattedDate = DateFormat('MMM d').format(DateTime.now());
 
   Widget weatherDetails(String iconName, String textName) {
     return Row(
@@ -172,7 +179,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-Widget _buildHourlyForecast(String time, String temperature, IconData icon, {bool isSelected = false}) {
+  Widget _buildHourlyForecast(String time, String temperature, IconData icon,
+      {bool isSelected = false}) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       decoration: isSelected
@@ -209,5 +217,4 @@ Widget _buildHourlyForecast(String time, String temperature, IconData icon, {boo
       ),
     );
   }
-
 }
